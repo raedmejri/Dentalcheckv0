@@ -1,4 +1,4 @@
-package com.Dental.Check.Controller;
+package com.Dental.Check.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

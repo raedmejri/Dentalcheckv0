@@ -42,7 +42,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".Controller.Dents"
+            android:name=".activities.Dents"
             android:exported="false" />
         <activity
             android:name=".Controller.test"
@@ -55,9 +55,9 @@
         <activity android:name=".Controller.UserdetailsActivity" />
         <activity android:name=".Controller.Profile" />
         <activity android:name=".Controller.Accueil" />
-        <activity android:name=".Controller.LoginActivity" />
-        <activity android:name=".Controller.RegisterActivity" />
-        <activity android:name=".Controller.MainActivity">
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

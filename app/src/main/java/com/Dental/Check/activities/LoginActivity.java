@@ -1,22 +1,19 @@
-package com.Dental.Check.Controller;
+package com.Dental.Check.activities;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.Dental.Check.Controller.Accueil;
+import com.Dental.Check.Controller.test;
 import com.Dental.Check.Entities.User;
 import com.Dental.Check.Retrofit.INodeJS;
 import com.Dental.Check.Retrofit.RetrofitClient;
@@ -136,7 +133,7 @@ private SharedPreferences sharedPreferences;
 
                                 if(user.getRole().equals("Dentiste")||user.getRole().equals("dentiste"))
                                 {
-                                    Intent i = new Intent(LoginActivity.this,Accueil.class);
+                                    Intent i = new Intent(LoginActivity.this, Accueil.class);
                                     startActivity(i);
                                 }
                                 else  if(user.getRole().equals("Secretaire")||user.getRole().equals("secretaire"))

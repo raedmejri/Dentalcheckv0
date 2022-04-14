@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.Dental.Check.R;
+import com.Dental.Check.activities.LoginActivity;
 
 
 public class Profile extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.Dental.Check.Controller;
+package com.Dental.Check.activities;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -17,21 +17,18 @@ import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
+import com.Dental.Check.Controller.test;
 import com.Dental.Check.Retrofit.INodeJS;
 import com.Dental.Check.Retrofit.RetrofitClient;
 import com.Dental.Check.R;
@@ -119,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity  {
         cn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(RegisterActivity.this,LoginActivity.class);
+                Intent intent= new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
 
             }

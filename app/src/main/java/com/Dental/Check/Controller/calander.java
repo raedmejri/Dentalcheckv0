@@ -1,9 +1,9 @@
 package com.Dental.Check.Controller;
-
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
-import androidx.lifecycle.Lifecycle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,13 +11,13 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 
 
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.icu.util.TimeZone;
 import android.os.Build;
-import android.provider.CalendarContract;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -31,8 +31,9 @@ import android.widget.Toast;
 
 import com.Dental.Check.Entities.Event;
 import com.Dental.Check.R;
-import com.Dental.Check.Retrofit.ApiClient;
 import com.Dental.Check.Retrofit.INodeJS;
+import com.Dental.Check.activities.RegisterActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,14 +57,16 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 
 @RequiresApi(api = Build.VERSION_CODES.N)
-public class calander extends LinearLayout {
+public class calander extends LinearLayout  {
     AlertDialog alertDialog;
     INodeJS myAPI;
    MyGridAdaptater myGridAdaptater;
     ImageButton previousbtn,nextbtn;
+    Button paiment_btn,message_btn,peopel_btn,home_btn;
     List<Event> listev= new ArrayList<>();
     TextView currentday;
     GridView gridView;
+    BottomNavigationView buttnavg;
     private final static int  max_calander_days=42;
     Calendar calendar= Calendar.getInstance(Locale.FRANCE);
     Context context;
@@ -77,25 +80,12 @@ public class calander extends LinearLayout {
 
 
 
-
-
-
-    public calander(Context context) {
-        super(context
-        );
-        IntializeLayout();
-        elements(moisFormat.format(calendar.getTime()),anneeFormat.format(calendar.getTime()));
-
-    }
-
-
-
-    public calander(Context context, @Nullable AttributeSet attrs) {
+    public calander(Context context, @Nullable AttributeSet attrs)
+    {
         super(context, attrs);
         this.context = context;
         IntializeLayout();
         elements(moisFormat.format(calendar.getTime()),anneeFormat.format(calendar.getTime()));
-
 
 
         previousbtn.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +106,8 @@ public class calander extends LinearLayout {
                 SetUpClander();
             }
         });
+        buttnavg.setOnNavigationItemSelectedListener(navlistner);
+
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -215,6 +207,34 @@ public class calander extends LinearLayout {
         });
 
     }
+private BottomNavigationView.OnNavigationItemSelectedListener navlistner= new BottomNavigationView.OnNavigationItemSelectedListener() {
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Fragment selectedfragment= null;
+        switch (menuItem.getItemId())
+        {
+            case R.id.navigation_home:
+
+               Intent intent= new Intent(getContext(),test.class);
+
+                    getContext().startActivity(intent);
+
+
+                break;
+            case R.id.chat:
+                selectedfragment= new ChatFragment();
+                break;
+            case R.id.allcansu:
+                Intent intent1= new Intent(context, RegisterActivity.class);
+                context.startActivity(intent1);
+                break;
+        }
+       return true;
+    }
+};
+
+
+
     private ArrayList<Event> collecteventbydate (String date)
     {
 
@@ -271,9 +291,12 @@ return arrayList;
 
   }
 
+    public calander(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
 
 
-        private void IntializeLayout() {
+    private void IntializeLayout() {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view;
             view = inflater.inflate(R.layout.activity_calander, this);
@@ -281,6 +304,11 @@ return arrayList;
             previousbtn = view.findViewById(R.id.previousBtn);
             currentday = view.findViewById(R.id.datecourant);
             gridView = view.findViewById(R.id.gridview);
+            buttnavg = view.findViewById(R.id.buttnavg);
+
+
+
+
             rr();
             elements(moisFormat.format(calendar.getTime()),anneeFormat.format(calendar.getTime()));
 

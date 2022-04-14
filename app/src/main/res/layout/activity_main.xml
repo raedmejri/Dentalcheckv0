@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:background="@drawable/bb"
     android:gravity="center"
-    tools:context="com.Dental.Check.Controller.MainActivity">
+    tools:context="com.Dental.Check.activities.MainActivity">
 
 
     <ImageView

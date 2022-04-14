@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/ic_message"
+        android:title="chat" />
+
+    <item
+        android:id="@+id/allcansu"
+        android:icon="@drawable/ic_people"
+        android:title="Tous les patients" />
+    <item
+        android:id="@+id/paiment"
+        android:icon="@drawable/ic_credit_card"
+        android:title="paiment" />
+
+
+</menu>
