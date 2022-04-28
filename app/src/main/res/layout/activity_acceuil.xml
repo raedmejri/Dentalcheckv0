@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Controller.Accueil"
-    android:id="@+id/drawer_layout">
+    android:id="@+id/drawer_layout"
+ >
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
@@ -22,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/home_background">
+        android:background="@drawable/bb">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -65,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/recycleview">
+            android:background="@drawable/bb">
 
 
                 <androidx.recyclerview.widget.RecyclerView

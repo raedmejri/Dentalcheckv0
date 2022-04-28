@@ -32,6 +32,8 @@ import android.widget.Toast;
 import com.Dental.Check.Entities.Event;
 import com.Dental.Check.R;
 import com.Dental.Check.Retrofit.INodeJS;
+import com.Dental.Check.activities.ChatActivity;
+import com.Dental.Check.activities.LoginActivity;
 import com.Dental.Check.activities.RegisterActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -222,7 +224,9 @@ private BottomNavigationView.OnNavigationItemSelectedListener navlistner= new Bo
 
                 break;
             case R.id.chat:
-                selectedfragment= new ChatFragment();
+                Intent intent2= new Intent(context, ChatActivity.class);
+
+             context.startActivity(intent2);
                 break;
             case R.id.allcansu:
                 Intent intent1= new Intent(context, RegisterActivity.class);

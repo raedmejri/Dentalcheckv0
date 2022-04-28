@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.Dental.Check.Entities.Patient;
 import com.Dental.Check.Entities.consultation;
 import com.Dental.Check.R;
+import com.Dental.Check.activities.Dents;
 
 public class patientDetails extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -47,13 +48,18 @@ public class patientDetails extends AppCompatActivity implements AdapterView.OnI
         cancel = findViewById(R.id.btn_cancel);
 
         operationdent = (Spinner)findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(patientDetails.this,
-                android.R.layout.simple_spinner_item,operations);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(patientDetails.this, android.R.layout.simple_spinner_item,operations);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         operationdent.setAdapter(adapter1);
         operationdent.setOnItemSelectedListener(this);
 
-
+cancel.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent i  = new Intent(patientDetails.this, Dents.class);
+        startActivity(i);
+    }
+});
         back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
