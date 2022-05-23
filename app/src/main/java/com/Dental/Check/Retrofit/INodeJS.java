@@ -45,6 +45,17 @@ public interface INodeJS {
 
 
 
+    @POST("/addoperations")
+    @FormUrlEncoded
+    Observable<String> addoperations (@Field("Nompatient") String Nompatient,
+                                        @Field("prenompatient") String prenompatient,
+                                        @Field("numero") String numero,
+                                        @Field("age") String age,
+                                        @Field("operation") String operation,
+                                        @Field("image") String image,
+                                       @Field("state") String state
+
+                                      );
     /*SaveEvent*/
 
     @POST("/addconsultationpatient")

@@ -21,6 +21,7 @@ import com.Dental.Check.Entities.Patient;
 import com.Dental.Check.Retrofit.ApiClient;
 import com.Dental.Check.Entities.PatientAdapter;
 import com.Dental.Check.R;
+import com.Dental.Check.activities.Dents;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
@@ -178,7 +179,7 @@ ImageView icon_drawer;
     public void clickedPatient(Patient p1) {
 
 
-        Intent i = new Intent(this, patientDetails.class).putExtra("patient",  p1);
+        Intent i = new Intent(this, Dents.class).putExtra("patient",  p1);
         startActivity(i);
 
     }

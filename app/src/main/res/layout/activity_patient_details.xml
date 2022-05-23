@@ -41,7 +41,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bb"
+                    android:background="@drawable/cc"
                     android:orientation="vertical"
                     android:paddingBottom="50dp">
 
@@ -59,7 +59,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:textColor="@color/textColorPrimary"
@@ -69,8 +69,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
                         android:text="Last name"
+                        android:layout_margin="10dp"
                         android:textColor="@color/white"
                         android:textSize="30dp"
                         android:textStyle="bold" />
@@ -80,18 +80,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginRight="30dp"
                         android:gravity="center"
-                        android:textColor="@color/home_color"
-                        android:textSize="20dp" />
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="phone"
+                        android:text="Phone"
                         android:textColor="@color/white"
                         android:textSize="30dp"
                         android:textStyle="bold" />
@@ -101,11 +102,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginRight="30dp"
                         android:gravity="center"
-                        android:textColor="@color/home_color"
-                        android:textSize="20dp" />
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="25dp"
+                        android:textStyle="bold"  />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -117,7 +119,7 @@
                         android:textStyle="bold" />
 
                     <RadioGroup
-                        android:id="@+id/radioG"
+                        android:id="@+id/radioGg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
@@ -130,7 +132,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="[3-14]"
-                            android:textSize="40dp"
+                            android:textSize="20dp"
                             android:textColor="@color/white" />
 
                         <RadioButton
@@ -138,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textSize="40dp"
+                            android:textSize="20dp"
                             android:text="[15-24]"
                             android:textColor="@color/white" />
                         <RadioButton
@@ -147,32 +149,48 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="[25-64]"
-                            android:textSize="40dp"
+                            android:textSize="20dp"
                             android:textColor="@color/white" />
                         <RadioButton
-                            android:id="@+id/Aînés"
+                            android:id="@+id/Aines"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:textSize="40dp"
+                            android:textSize="20dp"
                             android:text="plus que 65 ans "
                             android:textColor="@color/white" />
                     </RadioGroup>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Operation : "
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:spinnerMode="dropdown" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/cv"
                         android:layout_alignLeft="@+id/cv"
                         android:layout_alignRight="@+id/cv"
                         android:layout_marginLeft="35dp"
                         android:layout_marginTop="30dp"
                         android:layout_marginRight="35dp"
-                        android:layout_weight="2"
                         android:elevation="10dp"
                         android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:weightSum="2"
+                        android:layout_weight="2">
+
+
 
 
                         <Button
@@ -184,7 +202,6 @@
                             android:text="annuler"
                             android:textAllCaps="false"
                             android:textColor="@color/white" />
-
                         <Button
                             android:id="@+id/btn_suivant"
                             android:layout_width="200dp"
